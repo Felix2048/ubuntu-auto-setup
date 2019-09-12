@@ -18,6 +18,8 @@ deb https://mirrors.ustc.edu.cn/ubuntu/ xenial-security main restricted universe
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
 deb https://mirrors.ustc.edu.cn/ubuntu/ xenial-proposed main restricted universe multiverse
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ xenial-proposed main restricted universe multiverse
+# for sogou pinyin
+deb http://archive.ubuntukylin.com:10006/ubuntukylin xenial main
 EOF
 
 echo "Updating apt source"

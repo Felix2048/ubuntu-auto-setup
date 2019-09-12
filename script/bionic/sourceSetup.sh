@@ -18,6 +18,8 @@ deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
 deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
 deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+# for sogou pinyin
+deb http://archive.ubuntukylin.com:10006/ubuntukylin bionic main
 EOF
 
 echo "Updating apt source"
