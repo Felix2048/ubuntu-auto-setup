@@ -1,5 +1,7 @@
+#!/bin/bash
+
 echo "Upgreade system"
-apt upgrade -y
+# apt upgrade -y
 
 echo "Install git"
 apt install git -y
@@ -19,20 +21,8 @@ apt install unrar -y
 echo "Install kolourpaint4"
 apt install kolourpaint4 -y
 
-echo "Install vim"
-apt install vim -y
+echo "Install shutter for screen shot"
+apt install shutter -y
 
-echo "Install vim"
-apt install vim -y
-
-echo "Install vim"
-apt install vim -y
-
-echo "Install vim"
-apt install vim -y
-
-echo "Install vim"
-apt install vim -y
-
-echo "Install vim"
-apt install vim -y
+echo "Install tmux"
+apt install tmux -y

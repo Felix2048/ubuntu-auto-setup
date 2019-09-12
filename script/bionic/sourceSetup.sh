@@ -1,3 +1,8 @@
+#!/bin/bash
+
+echo "Make sure apt is installed"
+apt-get install apt
+
 echo "Back up source.list as source.list.bak"
 mv /etc/apt/sources.list /etc/apt/sources.list.bak
 

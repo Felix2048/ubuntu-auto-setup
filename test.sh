@@ -8,8 +8,6 @@ echo ""
 
 echo ""
 echo "Initializing"
-SHELL_FOLDER=$(dirname "$0")
-echo Script Path: ${SHELL_FOLDER}
 DownloadFolderName="ubuntu-auto-setup-download"
 echo Creating Download Floder: ${DownloadFolderName}
 mkdir -p ${HOME}/Downloads/${DownloadFolderName}
@@ -18,35 +16,16 @@ echo ""
 
 echo ""
 echo "Checking system"
-source ${SHELL_FOLDER}/script/common/systemCheck.sh
-echo System Version: ${SystemVersion} ${SystemCode}
-echo ROS Version Code: ${ROSCode}
+source ./script/common/systemCheck.sh
+echo System Version: ${SystemVersion} 
 echo "Done"
 echo ""
 
-echo ""
-echo "Setting up system source list"
-source ${SHELL_FOLDER}/script/${SystemCode}/sourceSetup.sh
-echo "Done"
-echo ""
+echo "###################################TEST##################################"
 
-echo ""
-echo "Setting up system settings"
-source ${SHELL_FOLDER}/script/common/systemSettingsSetup.sh
-echo "Done"
-echo ""
+# TODO
 
-echo ""
-echo "Installing common tools"
-source ${SHELL_FOLDER}/script/common/commonToolsInstall.sh
-echo "Done"
-echo ""
-
-echo ""
-echo "Installing ROS"
-source ${SHELL_FOLDER}/script/common/ROSInstall.sh
-echo "Done"
-echo ""
+echo "###################################TEST##################################"
 
 echo ""
 echo "Finishing"
