@@ -29,3 +29,9 @@ apt install tmux -y
 
 echo "Install expect"
 apt install expect -y
+
+echo "Install ssh and config"
+apt install ssh* openssh-*
+update-rc.d ssh defaults
+service sshd start
+
