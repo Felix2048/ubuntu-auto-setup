@@ -1,9 +1,15 @@
 #!/bin/bash
 
+RED_COLOR='\E[1;31m'
+GREEN_COLOR='\E[1;32m'
+YELOW_COLOR='\E[1;33m'
+WRITE_COLOR='\E[1;37m'
+RES='\033[0m'
+
 echo ""
-echo "#########################################################################"
-echo "#                          Start to auto setup!                         #"
-echo "#########################################################################"
+echo -e "${GREEN_COLOR}#########################################################################${RES}"
+echo -e "${GREEN_COLOR}#                          Start to auto setup!                         #${RES}"
+echo -e "${GREEN_COLOR}#########################################################################${RES}"
 echo ""
 
 echo ""
@@ -15,15 +21,9 @@ DownloadFolderName="ubuntu-auto-setup-download"         # floder to download
 echo Creating Download Floder: ${DownloadFolderName}
 mkdir -p ${HOME}/Downloads/${DownloadFolderName}
 DownloadFolder=${HOME}/Downloads/${DownloadFolderName}
-echo "Done"
+echo -e "${RED_COLOR}Done${RES}"
 echo ""
 
-echo ""
-echo "Checking system"
-source ./script/common/systemCheck.sh
-echo System Version: ${SystemVersion} 
-echo "Done"
-echo ""
 
 echo "###################################TEST##################################"
 
@@ -32,18 +32,18 @@ echo "###################################TEST##################################"
 
 echo "###################################TEST##################################"
 
-# echo ""
-# echo "Finishing"
-# echo Removing Download Floder: ${DownloadFolderName}
-# rm -rf ${HOME}/Downloads/${DownloadFolderName}
-# echo "Done"
-# echo ""
+echo ""
+echo "Finishing"
+echo Removing Download Floder: ${DownloadFolderName}
+rm -rf ${HOME}/Downloads/${DownloadFolderName}
+echo -e "${RED_COLOR}Done${RES}"
+echo ""
 
-# echo ""
-# echo "#########################################################################"
-# echo "#                                 Done!                                 #"
-# echo "#########################################################################"
-# echo ""
+echo ""
+echo -e "${GREEN_COLOR}#########################################################################${RES}"
+echo -e "${GREEN_COLOR}#                                 Done!                                 #${RES}"
+echo -e "${GREEN_COLOR}#########################################################################${RES}"
+echo ""
 
 # echo "OPTIND starts at $OPTIND"
 # while getopts ":pq:" optname
