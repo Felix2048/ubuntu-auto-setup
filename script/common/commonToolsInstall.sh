@@ -30,6 +30,9 @@ apt install tmux -y
 echo "Install expect"
 apt install expect -y
 
+echo "Install gdebi"
+apt install gdebi-core
+
 echo "Install ssh and config"
 apt install ssh* openssh-*
 update-rc.d ssh defaults
@@ -43,9 +46,13 @@ dpkg -i ${DownloadFolder}/chrome_latest_amd64.deb
 # apt update
 # apt install google-chrome-stable
 
-
 echo "Install vscode"
 source ${SHELL_FOLDER}/script/util/vscodeInstall.sh
 
 echo "Install sogou pinyin and fctix config"
 source ${SHELL_FOLDER}/script/util/sogouPinyinInstall.sh
+
+echo "Install teamviewer"
+wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -O ${DownloadFolder}/teamviewer_latest_amd64.deb
+dpkg -i ${DownloadFolder}/teamviewer_latest_amd64.deb
+apt -f install
