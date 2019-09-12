@@ -11,6 +11,9 @@ mkdir ~/Downloads/${downloadFolder}
 
 apt-get install apt -y
 
+if [ $JETSON_L4T == $L4TTarget ] ; then
+
+
 echo ""
 echo "Seting up source"
 sh ./script/sourceSetup.sh
