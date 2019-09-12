@@ -14,6 +14,7 @@ UserPassword="123"                                      # default password
 DownloadFolderName="ubuntu-auto-setup-download"         # floder to download
 echo Creating Download Floder: ${DownloadFolderName}
 mkdir -p ${HOME}/Downloads/${DownloadFolderName}
+DownloadFolder=${HOME}/Downloads/${DownloadFolderName}
 echo "Done"
 echo ""
 
