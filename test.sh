@@ -27,11 +27,7 @@ echo ""
 echo "###################################TEST##################################"
 
 # TODO
-echo ""
-echo "Setting up system settings"
-source ${SHELL_FOLDER}/script/common/systemSettingsSetup.sh
-echo "Done"
-echo ""
+
 
 echo "###################################TEST##################################"
 
