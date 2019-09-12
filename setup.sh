@@ -8,9 +8,10 @@ echo ""
 
 echo ""
 echo "Initializing"
-SHELL_FOLDER=$(dirname "$0")
+SHELL_FOLDER=$(dirname "$0")                            # get the floder contains the shell script
 echo Script Path: ${SHELL_FOLDER}
-DownloadFolderName="ubuntu-auto-setup-download"
+UserPassword="123"                                      # default password
+DownloadFolderName="ubuntu-auto-setup-download"         # floder to download
 echo Creating Download Floder: ${DownloadFolderName}
 mkdir -p ${HOME}/Downloads/${DownloadFolderName}
 echo "Done"

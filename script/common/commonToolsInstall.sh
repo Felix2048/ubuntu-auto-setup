@@ -15,8 +15,8 @@ apt install vim -y
 echo "Install unzip"
 apt install unzip -y
 
-echo "Install unrar"
-apt install unrar -y
+echo "Install unrar and rar"
+apt install unrar rar -y
 
 echo "Install kolourpaint4"
 apt install kolourpaint4 -y
@@ -26,3 +26,6 @@ apt install shutter -y
 
 echo "Install tmux"
 apt install tmux -y
+
+echo "Install expect"
+apt install expect -y
