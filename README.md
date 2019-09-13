@@ -7,3 +7,10 @@ An auto-setup script for Ubuntu Desktop (x86_64)
 - flatpak
 - gnome
 - theme & icon etc.
+- y-ppa-manager
+- git ssh key
+
+# ERROR
+
+- sogou and fctix
+- zsh and fzf
