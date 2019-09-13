@@ -38,7 +38,7 @@ source ${SHELL_FOLDER}/script/installer/teamviewerInstall.sh
 INFO "Install ShadowsocksR"
 # wget -N --no-check-certificate https://raw.githubusercontent.com/Felix2048/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 cp ${SHELL_FOLDER}/app-image/electron-ssr-0.2.6.AppImage ${HOME}/Desktop/electron-ssr.AppImage
-chmod +x ${HOME}/electron-ssr.AppImage
+chmod 777 ${HOME}/electron-ssr.AppImage
 
 INFO "Install and config zsh"
 source ${SHELL_FOLDER}/script/installer/zsh/zshInstallAndConfig.sh

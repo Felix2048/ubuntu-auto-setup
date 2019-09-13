@@ -22,4 +22,4 @@ trusted-host = pypi.tuna.tsinghua.edu.cn
 EOF
 
 git config --global user.email ${UserEmail}
-git config --global user.name  ${USERNAME}
+git config --global user.name  ${UserName}
