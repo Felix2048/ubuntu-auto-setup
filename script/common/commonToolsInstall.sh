@@ -36,6 +36,9 @@ apt install gdebi-core -y
 echo "Install okular"
 apt install okular -y
 
+echo "Install xclip"
+apt install xclip -y
+
 echo "Install ssh and config"
 apt install ssh* openssh-* -y
 update-rc.d ssh defaults
