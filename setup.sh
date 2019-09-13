@@ -50,6 +50,18 @@ echo -e "${RED_COLOR}Done${RES}"
 echo ""
 
 echo ""
+echo "Installing zsh"
+source ${SHELL_FOLDER}/script/common/zshInstallAndConfig.sh
+echo -e "${RED_COLOR}Done${RES}"
+echo ""
+
+echo ""
+echo "Installing Anaconda3"
+source ${SHELL_FOLDER}/script/common/anaconda3Install.sh
+echo -e "${RED_COLOR}Done${RES}"
+echo ""
+
+echo ""
 echo "Installing ROS"
 source ${SHELL_FOLDER}/script/common/ROSInstall.sh
 echo -e "${RED_COLOR}Done${RES}"
