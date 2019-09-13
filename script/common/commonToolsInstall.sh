@@ -55,7 +55,13 @@ source ${SHELL_FOLDER}/script/util/vscodeInstall.sh
 echo "Install sogou pinyin and fctix config"
 source ${SHELL_FOLDER}/script/util/sogouPinyinInstall.sh
 
-echo "Install teamviewer"
+echo "Install Teamviewer"
 wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -O ${DownloadFolder}/teamviewer_latest_amd64.deb
 dpkg -i ${DownloadFolder}/teamviewer_latest_amd64.deb
 apt -f install
+
+echo "Install Typora"
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE -y
+add-apt-repository 'deb http://typora.io linux/' -y
+apt update -y
+apt install typora
