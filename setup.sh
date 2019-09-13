@@ -16,6 +16,7 @@ echo
 echo
 REMIND "Initializing"
 source ${SHELL_FOLDER}/script/common/init.sh
+INFO "Download Floder: ${DownloadFolder} created!"
 REMIND "Done"
 echo
 

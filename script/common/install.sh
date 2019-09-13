@@ -40,7 +40,7 @@ INFO "Install ShadowsocksR"
 cp ${SHELL_FOLDER}/app-image/electron-ssr-0.2.6.AppImage ${HOME}/Desktop/electron-ssr.AppImage
 chmod +x ${HOME}/electron-ssr.AppImage
 
-INFO "Install zsh"
+INFO "Install and config zsh"
 source ${SHELL_FOLDER}/script/installer/zsh/zshInstallAndConfig.sh
 INFO "Install zsh plugin"
 source ${SHELL_FOLDER}/script/installer/zsh/zshPluginInstall.sh

@@ -10,7 +10,7 @@ INFO "Update apt"
 apt update
 
 INFO "Installation (Desktop-Full Install)"
-apt install ros-${ROSCode}-desktop-full
+apt install ros-${ROSCode}-desktop-full -y
 
 INFO "Initialize rosdep"
 rosdep init
@@ -22,4 +22,4 @@ echo "source /opt/ros/${ROSCode}/setup.bash" >> ~/.bashrc
 echo "source /opt/ros/${ROSCode}/setup.zsh" >> ~/.zshrc
 
 INFO "Dependencies for building packages"
-apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
+apt install python-rosinstall python-rosinstall-generator python-wstool build-essential -y
