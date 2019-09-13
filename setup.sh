@@ -22,8 +22,8 @@ echo
 echo
 REMIND "Checking system"
 source ${SHELL_FOLDER}/script/common/systemCheck.sh
-INFO System Version: ${SystemVersion} ${SystemCode}
-INFO ROS Version Code: ${ROSCode}
+INFO "System Version: ${SystemVersion} ${SystemCode}"
+INFO "ROS Version Code: ${ROSCode}"
 REMIND "Done"
 echo
 
