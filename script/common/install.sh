@@ -87,3 +87,6 @@ sudo add-apt-repository -r ppa:webupd8team/y-ppa-manager
 
 INFO  "Install docker"
 sudo apt-get install docker.io -y
+
+INFO "Install dconf-editor"
+sudo apt install dconf-editor
