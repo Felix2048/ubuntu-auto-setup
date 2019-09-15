@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo "Update apt source"
+INFO "Update apt source"
 sudo apt update -y
 
-echo "Upgreade system"
+INFO "Upgreade system"
 sudo apt upgrade -y
 
 INFO "Install vim"
@@ -38,7 +38,7 @@ source ${SHELL_FOLDER}/script/installer/teamviewerInstall.sh
 INFO "Install ShadowsocksR"
 # sudo wget -N --no-check-certificate https://raw.githubusercontent.com/Felix2048/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 cp ${SHELL_FOLDER}/app-image/electron-ssr-0.2.6.AppImage ${HOME}/Desktop/electron-ssr.AppImage
-chmod 777 ${HOME}/electron-ssr.AppImage
+chmod 777 ${HOME}/Desktop/electron-ssr.AppImage
 
 INFO "Install and config zsh"
 source ${SHELL_FOLDER}/script/installer/zsh/zshInstallAndConfig.sh
@@ -70,10 +70,20 @@ INFO "Install gimp"
 sudo apt install gimp -y
 
 INFO "Install Typora"
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE -y
-sudo add-apt-repository 'deb http://typora.io linux/' -y
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
+sudo add-apt-repository 'deb http://typora.io linux/'
 sudo apt update -y
 sudo apt install typora -y
+sudo add-apt-repository -r 'deb http://typora.io linux/'
 
 INFO "Install gparted"
 sudo apt install gparted -y
+
+INFO "Install y-ppa-manager"
+sudo add-apt-repository ppa:webupd8team/y-ppa-manager
+sudo apt-get update
+sudo apt-get install y-ppa-manager
+sudo add-apt-repository -r ppa:webupd8team/y-ppa-manager
+
+INFO  "Install docker"
+sudo apt-get install docker.io -y
