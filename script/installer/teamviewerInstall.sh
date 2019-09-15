@@ -1,5 +1,5 @@
 #!/bin/bash
 
 wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -O ${DownloadFolder}/teamviewer_latest_amd64.deb
-dpkg -i ${DownloadFolder}/teamviewer_latest_amd64.deb
-apt -f install -y
+sudo dpkg -i ${DownloadFolder}/teamviewer_latest_amd64.deb
+sudo apt -f install -y

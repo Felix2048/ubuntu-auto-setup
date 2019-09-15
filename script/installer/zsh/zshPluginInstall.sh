@@ -17,9 +17,9 @@ else
 fi
 
 # install autojump
-apt install autojump
+sudo apt install autojump -y
 # echo "[!] need to add autojump in ~/.zshrc plugin and logoff manually!"
 
 # install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+sudo ~/.fzf/install

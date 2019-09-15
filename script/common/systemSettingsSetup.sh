@@ -1,12 +1,13 @@
 #!/bin/bash
 
 INFO "Setup root password"
-source ${SHELL_FOLDER}/script/util/rootPasswordSetup.sh
+sudo bash ${SHELL_FOLDER}/script/util/rootPasswordSetup.sh
+echo ""
 
 INFO "Setup no password for sudo"
-touch /etc/sudoers.d/nopasswd4sudo
-echo "ubuntu ALL=(ALL) NOPASSWD : ALL"  >> /etc/sudoers.d/nopasswd4sudo
-# pkexec visudo # for manually resetting sudoers.d
+sudo touch /etc/sudoers.d/nopasswd4sudo
+sudo echo "ubuntu ALL=(ALL) NOPASSWD : ALL"  >> /etc/sudoers.d/nopasswd4sudo
+# sudo pkexec visudo # for manually resetting sudoers.d
 
 INFO "Fix time zone problem"
 timedatectl set-local-rtc true

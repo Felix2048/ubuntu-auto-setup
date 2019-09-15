@@ -3,7 +3,7 @@
 INFO "Script Path: ${SHELL_FOLDER}"
 
 INFO "Make sure apt is installed"
-apt-get install apt -y
+sudo apt-get install apt -y
 
 INFO "Install Dependencies"
 source ${SHELL_FOLDER}/script/common/init/dependenciesInstall.sh

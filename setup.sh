@@ -1,10 +1,9 @@
 #!/bin/bash
 
 SHELL_FOLDER=$(dirname "$0")                            # get the floder contains the shell script
-UserName="felix"                                        # default user
-UserEmail="infinitesamsarax@outlook.com"                # default email
-UserPassword="123"                                      # default password
-DownloadFolderName="ubuntu-auto-setup-download"         # floder to download
+
+# load config
+${SHELL_FOLDER}/config/setupConfig
 
 source ${SHELL_FOLDER}/script/util/logger.sh
 

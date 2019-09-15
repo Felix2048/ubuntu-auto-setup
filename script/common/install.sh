@@ -1,27 +1,27 @@
 #!/bin/bash
 
 echo "Update apt source"
-apt update -y
+sudo apt update -y
 
 echo "Upgreade system"
-apt upgrade -y
+sudo apt upgrade -y
 
 INFO "Install vim"
-apt install vim -y
+sudo apt install vim -y
 # INFO "Config vim"
 # TODO
 
 INFO "Install tmux"
-apt install tmux -y
+sudo apt install tmux -y
 
 INFO "Install xclip"
-apt install xclip -y
+sudo apt install xclip -y
 
 INFO "Install ssh"
-apt install ssh* openssh-* -y
+sudo apt install ssh* openssh-* -y
 INFO "Config ssh"
-update-rc.d ssh defaults
-service sshd start
+sudo update-rc.d ssh defaults
+sudo service sshd start
 
 INFO "Install chrome"
 source ${SHELL_FOLDER}/script/installer/chromeInstall.sh
@@ -36,7 +36,7 @@ INFO "Install Teamviewer"
 source ${SHELL_FOLDER}/script/installer/teamviewerInstall.sh
 
 INFO "Install ShadowsocksR"
-# wget -N --no-check-certificate https://raw.githubusercontent.com/Felix2048/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+# sudo wget -N --no-check-certificate https://raw.githubusercontent.com/Felix2048/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 cp ${SHELL_FOLDER}/app-image/electron-ssr-0.2.6.AppImage ${HOME}/Desktop/electron-ssr.AppImage
 chmod 777 ${HOME}/electron-ssr.AppImage
 
@@ -52,28 +52,28 @@ INFO "Install anaconda3"
 source ${SHELL_FOLDER}/script/installer/anaconda3Install.sh
 
 INFO "Install shutter for screen shot"
-apt install shutter -y
+sudo apt install shutter -y
 
 INFO "Install okular"
-apt install okular -y
+sudo apt install okular -y
 
 INFO "Install kolourpaint4"
-apt install kolourpaint4 -y
+sudo apt install kolourpaint4 -y
 
 INFO "Install filezilla"
-apt install filezilla -y
+sudo apt install filezilla -y
 
 INFO "Install smplayer"
-apt install smplayer -y
+sudo apt install smplayer -y
 
 INFO "Install gimp"
-apt install gimp -y
+sudo apt install gimp -y
 
 INFO "Install Typora"
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE -y
-add-apt-repository 'deb http://typora.io linux/' -y
-apt update -y
-apt install typora -y
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE -y
+sudo add-apt-repository 'deb http://typora.io linux/' -y
+sudo apt update -y
+sudo apt install typora -y
 
 INFO "Install gparted"
-apt install gparted -y
+sudo apt install gparted -y

@@ -1,0 +1,5 @@
+# UserName="felix"                                        # default user
+UserName=${USERNAME}
+UserEmail="infinitesamsarax@outlook.com"                # default email
+UserPassword="123"                                      # default password
+DownloadFolderName="ubuntu-auto-setup-download"         # floder to download
