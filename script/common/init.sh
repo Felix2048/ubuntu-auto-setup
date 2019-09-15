@@ -16,3 +16,4 @@ mkdir -p ${HOME}/Downloads/${DownloadFolderName}
 DownloadFolder=${HOME}/Downloads/${DownloadFolderName}
 
 export DownloadFolder
+export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/ # for gsettings
