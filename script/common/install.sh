@@ -36,6 +36,11 @@ source ${SHELL_FOLDER}/script/installer/sogouPinyinInstall.sh
 INFO "Install Teamviewer"
 source ${SHELL_FOLDER}/script/installer/teamviewerInstall.sh
 
+INFO "Install Shadowsocks"
+REMIND "NEED: Manually add a config file for it and use <sslocal -c your_path/config.json start> to launch ss"
+REMIND "GFW PAC list: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt"
+pip install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U
+
 # INFO "Install ShadowsocksR"
 # # sudo wget -N --no-check-certificate https://raw.githubusercontent.com/Felix2048/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 # cp ${SHELL_FOLDER}/misc/app-image/electron-ssr-0.2.6.AppImage ${HOME}/Desktop/electron-ssr.AppImage
