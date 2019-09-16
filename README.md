@@ -5,11 +5,10 @@ An auto-setup script for Ubuntu Desktop (x86_64)
 # TODO
 
 - flatpak
-- gnome
-- theme & icon etc.
 - git ssh key
+- ss
 
 # ERROR
 
 - sogou and fctix
-- zsh and fzf
+- ssr not working
