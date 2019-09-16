@@ -90,3 +90,9 @@ sudo apt-get install docker.io -y
 
 INFO "Install dconf-editor"
 sudo apt install dconf-editor
+
+INFO "Install libreoffice"
+sudo apt install libreoffice
+
+INFO "Install compiz"
+sudo apt install compizconfig-settings-manager compiz-plugins compiz-plugins-extra compizconfig-settings-manager -y

@@ -26,6 +26,10 @@ INFO "Setup git config"
 git config --global user.email ${UserEmail}
 git config --global user.name  ${UserName}
 
-INFO "Disable scren auto lock"
-gsettings set org.gnome.desktop.session idle-delay 0
-gsettings set org.gnome.desktop.screensaver lock-enabled false
+INFO "Apply system settings"
+gsettings set org.gnome.desktop.session idle-delay 0                # disable scren auto lock
+gsettings set org.gnome.desktop.screensaver lock-enabled false      # Disable scren auto lock
+gsettings set org.gnome.desktop.interface clock-show-date true      # show date
+gsettings set org.gnome.desktop.interface menus-have-icons true     # show menus icons
+gsettings set org.gnome.system.locale region 'en_US.UTF-8'          # set region US
+gsettings set org.gnome.gedit.preferences.encodings auto-detected "['GB18030', 'UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16']"    # auto detect gedit language
