@@ -2,6 +2,9 @@
 
 # Grub2 Dark Theme
 
+SCRIPT_PATH=$(dirname "$0")
+echo -e "Script Path: ${SCRIPT_PATH}"
+
 ROOT_UID=0
 THEME_DIR="/boot/grub/themes"
 THEME_DIR_2="/boot/grub2/themes"
@@ -24,13 +27,14 @@ if [ "$UID" -eq "$ROOT_UID" ]; then
   echo -e "Checking for the existence of themes directory..."
   [[ -d ${THEME_DIR}/${THEME_NAME} ]] && rm -rf ${THEME_DIR}/${THEME_NAME}
   [[ -d ${THEME_DIR_2}/${THEME_NAME} ]] && rm -rf ${THEME_DIR_2}/${THEME_NAME}
-  [[ -d /boot/grub ]] && mkdir -p ${THEME_DIR}
-  [[ -d /boot/grub2 ]] && mkdir -p ${THEME_DIR_2}
+  mkdir -p ${THEME_DIR}
+  mkdir -p ${THEME_DIR_2}
 
   # Copy theme
   echo -e "Installing ${THEME_NAME} theme..."
-  [[ -d /boot/grub ]] && cp -a ${THEME_NAME} ${THEME_DIR}
-  [[ -d /boot/grub2 ]] && cp -a ${THEME_NAME} ${THEME_DIR_2}
+
+  cp -a ${SCRIPT_PATH}/${THEME_NAME} ${THEME_DIR}
+  cp -a ${SCRIPT_PATH}/${THEME_NAME} ${THEME_DIR_2}
 
   # Set theme
   echo -e "Setting ${THEME_NAME} as default..."
@@ -45,7 +49,8 @@ if [ "$UID" -eq "$ROOT_UID" ]; then
     update-grub
   elif has_command grub-mkconfig; then
     grub-mkconfig -o /boot/grub/grub.cfg
-  elif has_command grub2-mkconfig; then
+  fi
+  if has_command grub2-mkconfig; then
     grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
   fi
 

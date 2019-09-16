@@ -26,16 +26,16 @@ sudo apt remove lightdm -y
 REMIND "Select slim"
 sudo dpkg-reconfigure slim
 INFO "Install Mac OS Mojave Theme for SLiM Display Manager"
-# 
-sudo mkdir -p /user/share/slim/themes/macOSMojave
-sudo cp ${SHELL_FOLDER}/misc/theme/macOSMojave/* /user/share/slim/themes/macOSMojave
+# https://www.gnome-look.org/p/1237548/
+sudo mkdir -p /usr/share/slim/themes/macOSMojave
+sudo cp ${SHELL_FOLDER}/misc/theme/macOSMojave/* /usr/share/slim/themes/macOSMojave
 sudo mv /etc/slim.conf /etc/slim.conf.bak
 sudo cp ${SHELL_FOLDER}/config/slim.conf /etc/slim.conf
 
 INFO "Install grub2 and its theme"
-sudo apt install grub2 
+sudo apt install grub2* -y
 # https://www.gnome-look.org/p/1307852/
-sudo bash ${SHELL_FOLDER}/misc/theme/grub-theme-tela/install-tela.sh
+su - root -c "bash ${SHELL_FOLDER}/misc/theme/grub-theme-tela/install-tela.sh"
 
 INFO "Install Yosemite Theme"
 mkdir ~/.theme
