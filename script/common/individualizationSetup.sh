@@ -3,12 +3,39 @@
 INFO "Install GNOME"
 sudo apt install gnome gnome-session* gnome-tweak-tool gnome-shell* gnome-panel* -y
 
+INFO "Install MS core fonts"
+sudo apt install ttf-mscorefonts-installer -y
+INFO "Install Mac fonts"
+wget http://drive.noobslab.com/data/Mac/macfonts.zip -O ${DownloadFolder}/mac-fonts.zip
+sudo unzip ${DownloadFolder}/mac-fonts.zip -d /usr/share/fonts
+INFO "Install Other fonts"
+sudo cp ${SHELL_FOLDER}/misc/fonts/* /usr/share/fonts
+wget https://www.fontspace.com/download/15111/35564c0efef849cf9200688626b85d6f/nimavisual_timeburner.zip -O ${DownloadFolder}/timeburner-fonts.zip
+sudo unzip ${DownloadFolder}/timeburner-fonts.zip -d /usr/share/fonts
+wget https://www.fontspace.com/download/14579/f994430f737d4934a3f03b28a19fa484/total-fontgeek-dtf-ltd_erbos-draco-monospaced-nbp.zip -O ${DownloadFolder}/NBP-fonts.zip
+sudo unzip ${DownloadFolder}/NBP-fonts.zip -d /usr/share/fonts
+INFO "Update fonts"
+sudo fc-cache -f -v
+
 INFO "Install gdm3"
-sudo apt install gdm3
+sudo apt install gdm3 -y
+INFO "Install SLiM Display Manager"
+sudo apt install slim scrot -y
 INFO "Remove lightdm"
-sudo apt remove lightdm
-REMIND "Select gdm3"
-sudo dpkg-reconfigure gdm3
+sudo apt remove lightdm -y
+REMIND "Select slim"
+sudo dpkg-reconfigure slim
+INFO "Install Mac OS Mojave Theme for SLiM Display Manager"
+# 
+sudo mkdir -p /user/share/slim/themes/macOSMojave
+sudo cp ${SHELL_FOLDER}/misc/theme/macOSMojave/* /user/share/slim/themes/macOSMojave
+sudo mv /etc/slim.conf /etc/slim.conf.bak
+sudo cp ${SHELL_FOLDER}/config/slim.conf /etc/slim.conf
+
+INFO "Install grub2 and its theme"
+sudo apt install grub2 
+# https://www.gnome-look.org/p/1307852/
+sudo bash ${SHELL_FOLDER}/misc/theme/grub-theme-tela/install-tela.sh
 
 INFO "Install Yosemite Theme"
 mkdir ~/.theme
@@ -22,48 +49,21 @@ sudo apt update -y
 sudo apt install macbuntu-os-* -y
 sudo apt install slingscold
 
-INFO "Install albert (replacing Mac Spotlight) and set auto startup"
+INFO "Install albert (replacing Mac Spotlight)"
 sudo apt install albert
-sudo bash -c "cat > /etc/init.d/albert" << EOF
-#!/bin/bash
-/usr/bin/albert
-EOF
-sudo chmod +x /etc/init.d/albert
-sudo update-rc.d albert defaults
 
-
-INFO "Install plank dock and set auto startup"
+INFO "Install plank dock"
 sudo apt install plank
-sudo bash -c "cat > /etc/init.d/plank" << EOF
-#!/bin/bash
-/usr/bin/plank
-EOF
-sudo chmod +x /etc/init.d/plank
-sudo update-rc.d plank defaults
-
 
 INFO "Replace <Ubuntu Desktop> text with <Mac> on the Panel"
 cd && wget -O Mac.po http://drive.noobslab.com/data/Mac/change-name-on-panel/mac.po
 cd /usr/share/locale/en/LC_MESSAGES; sudo msgfmt -o unity.mo ~/Mac.po;rm ~/Mac.po;cd
 
-INFO "Install Apple Logo for greeter"
-wget -O launcher_bfb.png http://drive.noobslab.com/data/Mac/launcher-logo/apple/launcher_bfb.png
-sudo mkdir /usr/share/unity/icons/
-sudo mv launcher_bfb.png /usr/share/unity/icons/
-gsettings set com.canonical.unity-greeter draw-grid false
-
-INFO "Install MS core fonts"
-sudo apt install ttf-mscorefonts-installer -y
-INFO "Install Mac fonts"
-wget http://drive.noobslab.com/data/Mac/macfonts.zip -O ${DownloadFolder}/mac-fonts.zip
-sudo unzip ${DownloadFolder}/mac-fonts.zip -d /usr/share/fonts
-INFO "Install Other fonts"
-wget https://www.fontspace.com/download/15111/35564c0efef849cf9200688626b85d6f/nimavisual_timeburner.zip -O ${DownloadFolder}/timeburner-fonts.zip
-sudo unzip ${DownloadFolder}/timeburner-fonts.zip -d /usr/share/fonts
-wget https://www.fontspace.com/download/14579/f994430f737d4934a3f03b28a19fa484/total-fontgeek-dtf-ltd_erbos-draco-monospaced-nbp.zip -O ${DownloadFolder}/NBP-fonts.zip
-sudo unzip ${DownloadFolder}/NBP-fonts.zip -d /usr/share/fonts
-INFO "Update fonts"
-sudo fc-cache -f -v
+# INFO "Install Apple Logo for greeter"
+# wget -O launcher_bfb.png http://drive.noobslab.com/data/Mac/launcher-logo/apple/launcher_bfb.png
+# sudo mkdir /usr/share/unity/icons/
+# sudo mv launcher_bfb.png /usr/share/unity/icons/
+# gsettings set com.canonical.unity-greeter draw-grid false
 
 INFO "Download wallpapers"
 wget http://drive.noobslab.com/data/Mac/MacBuntu-Wallpapers.zip -O ${DownloadFolder}/wallpapers.zip
