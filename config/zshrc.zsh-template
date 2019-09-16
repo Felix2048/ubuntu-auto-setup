@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # ALIAS
 alias cm="catkin_make -j 6"
 alias vz="vim ~/.zshrc"
+alias vb="vim ~/.bashrc"
 alias vh="sudo vim /etc/hosts"
 alias sz="source ~/.zshrc"
 alias sb="source ~/.bashrc"
