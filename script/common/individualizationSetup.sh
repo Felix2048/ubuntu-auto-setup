@@ -3,9 +3,10 @@
 INFO "Install GNOME"
 sudo apt install gnome gnome-session* gnome-tweak-tool gnome-shell* gnome-panel* -y
 
-INFO "Install lightdm (SELECT lightdm)"
+INFO "Install lightdm"
 sudo apt install lightdm
-# sudo dpkg-reconfigure lightdm # for reconfigure
+REMIND "Select gdm3"
+sudo dpkg-reconfigure lightdm
 
 INFO "Install Yosemite Theme"
 mkdir ~/.theme
@@ -19,11 +20,23 @@ sudo apt update -y
 sudo apt install macbuntu-os-* -y
 sudo apt install slingscold
 
-INFO "Install albert (replacing Mac Spotlight)"
+INFO "Install albert (replacing Mac Spotlight) and set auto startup"
 sudo apt install albert
+sudo bash -c "cat > /etc/init.d/albert" << EOF
+#!/bin/bash
+/usr/bin/albert
+EOF
+sudo update-rc.d albert defaults
 
-INFO "Install plank dock"
+
+INFO "Install plank dock and set auto startup"
 sudo apt install plank
+sudo bash -c "cat > /etc/init.d/plank" << EOF
+#!/bin/bash
+/usr/bin/plank
+EOF
+sudo update-rc.d plank defaults
+
 
 INFO "Replace <Ubuntu Desktop> text with <Mac> on the Panel"
 cd && wget -O Mac.po http://drive.noobslab.com/data/Mac/change-name-on-panel/mac.po
@@ -61,6 +74,7 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Macbuntu-OSX-cursors'   
 gsettings set org.gnome.desktop.interface icon-theme 'MacBuntu-OSX'             # set icons
 gsettings set org.gnome.desktop.background show-desktop-icons false             # not show desktop icons
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/MacBuntu-Wallpapers/mbuntu-4.jpg' # set wallpaper
+gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/MacBuntu-Wallpapers/mbuntu-1.jpg'
 gsettings set org.gnome.desktop.interface font-name 'Lucida MAC 11'                 # set font
 gsettings set org.gnome.desktop.interface document-font-name 'MACGrande Medium 11'  # set font
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Lucida MAC Bold 11'   # set font
@@ -68,8 +82,8 @@ dconf write /net/launchpad/plank/docks/dock1/zoom-enabled true
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 gsettings set org.gnome.shell enabled-extensions "['caffeine@patapon.info', 'disconnect-wifi@kgshank.net', 'hidetopbar@mathieu.bidon.ca', 'hide-veth@jonathan.bluemosh.com', 'impatience@gfxmonk.net', 'LogOutButton@kyle.aims.ac.za', 'multi-monitors-add-on@spin83', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'noannoyance@sindex.com', 'openweather-extension@jenslody.de', 'suspend-button@laserb', 'show-ip@sgaraud.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'gnome-shell-trash-extension', 'applications-overview-tooltip@RaphaelRochet', 'TopIcons@phocean.net']"
-gsettings set com.canonical.unity-greeter draw-user-backgrounds false
-gsettings set com.canonical.unity-greeter background 'file:///usr/share/backgrounds/MacBuntu-Wallpapers/mbuntu-1.jpg'
+gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
+gsettings set org.gnome.shell.extensions.dash-to-dock autohide-in-fullscreen true
 
 INFO "Setup Applications Launcher"
 cat > ~/.config/plank/dock1/launchers/show-apps.dockitem << EOF
