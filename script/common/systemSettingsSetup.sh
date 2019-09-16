@@ -9,6 +9,9 @@ sudo touch /etc/sudoers.d/nopasswd4sudo
 sudo bash -c "echo '${USERNAME} ALL=(ALL) NOPASSWD : ALL'  > /etc/sudoers.d/nopasswd4sudo"
 # sudo pkexec visudo # for manually resetting   .d
 
+INFO "Setup ssh for github.com"
+sudo bash ${SHELL_FOLDER}/script/util/github-ssh-key.sh
+
 INFO "Fix time zone problem"
 timedatectl set-local-rtc true
 timedatectl set-ntp true
