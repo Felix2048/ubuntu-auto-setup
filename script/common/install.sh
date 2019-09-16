@@ -5,6 +5,7 @@ sudo apt update -y
 
 INFO "Upgreade system"
 sudo apt upgrade -y
+sudo apt dist-upgrade -y
 
 INFO "Install vim"
 sudo apt install vim -y

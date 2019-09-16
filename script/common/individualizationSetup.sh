@@ -3,10 +3,12 @@
 INFO "Install GNOME"
 sudo apt install gnome gnome-session* gnome-tweak-tool gnome-shell* gnome-panel* -y
 
-INFO "Install lightdm"
-sudo apt install lightdm
+INFO "Install gdm3"
+sudo apt install gdm3
+INFO "Remove lightdm"
+sudo apt remove lightdm
 REMIND "Select gdm3"
-sudo dpkg-reconfigure lightdm
+sudo dpkg-reconfigure gdm3
 
 INFO "Install Yosemite Theme"
 mkdir ~/.theme
@@ -26,6 +28,7 @@ sudo bash -c "cat > /etc/init.d/albert" << EOF
 #!/bin/bash
 /usr/bin/albert
 EOF
+sudo chmod +x /etc/init.d/albert
 sudo update-rc.d albert defaults
 
 
@@ -35,6 +38,7 @@ sudo bash -c "cat > /etc/init.d/plank" << EOF
 #!/bin/bash
 /usr/bin/plank
 EOF
+sudo chmod +x /etc/init.d/plank
 sudo update-rc.d plank defaults
 
 
@@ -80,10 +84,12 @@ gsettings set org.gnome.desktop.interface document-font-name 'MACGrande Medium 1
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Lucida MAC Bold 11'   # set font
 dconf write /net/launchpad/plank/docks/dock1/zoom-enabled true
 gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
-gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"        # set window switch
+gsettings set org.gnome.desktop.wm.keybindings show-desktop "['<Super>d']"          # set show desktop
 gsettings set org.gnome.shell enabled-extensions "['caffeine@patapon.info', 'disconnect-wifi@kgshank.net', 'hidetopbar@mathieu.bidon.ca', 'hide-veth@jonathan.bluemosh.com', 'impatience@gfxmonk.net', 'LogOutButton@kyle.aims.ac.za', 'multi-monitors-add-on@spin83', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'noannoyance@sindex.com', 'openweather-extension@jenslody.de', 'suspend-button@laserb', 'show-ip@sgaraud.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'gnome-shell-trash-extension', 'applications-overview-tooltip@RaphaelRochet', 'TopIcons@phocean.net']"
-gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
-gsettings set org.gnome.shell.extensions.dash-to-dock autohide-in-fullscreen true
+# gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
+# gsettings set org.gnome.shell.extensions.dash-to-dock autohide-in-fullscreen true
+sudo apt remove gnome-shell-extension-ubuntu-dock
 
 INFO "Setup Applications Launcher"
 cat > ~/.config/plank/dock1/launchers/show-apps.dockitem << EOF
