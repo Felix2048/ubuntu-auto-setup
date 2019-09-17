@@ -115,3 +115,5 @@ sudo apt install libreoffice-style-sifr
 REMIND "Go to LibreOffice menu select <Tools> - <Options> - <LibreOffice> - <View> and select <Sifr> under <Icon size and style>"
 /usr/bin/libreoffice
 
+INFO "Use pgit 'msg' command for quick git add/commit/push"
+sudo cp ${SHELL_FOLDER}/script/util/pgit /usr/bin/
