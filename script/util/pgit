@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ -z $* ] ; then
+if [ $# -eq 0 ] ; then
     echo "ERROR: Commit with massage!"
 else
-    git add --all && echo 'Commit with msg: $*' && git commit -m '$1' && git push
+    git add --all && git commit -m "$*" && git push
 fi
