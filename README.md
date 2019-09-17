@@ -19,6 +19,8 @@ An auto-setup script for Ubuntu:
 ## TODO
 
 - flatpak
+- vim config
+- tmux config
 
 ## ERROR
 
