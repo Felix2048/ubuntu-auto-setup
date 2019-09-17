@@ -77,8 +77,8 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Yosemite-dark'             
 gsettings set org.gnome.desktop.interface cursor-theme 'Macbuntu-OSX-cursors'   # set cursors
 gsettings set org.gnome.desktop.interface icon-theme 'MacBuntu-OSX'             # set icons
 gsettings set org.gnome.desktop.background show-desktop-icons false             # not show desktop icons
-gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/MacBuntu-Wallpapers/mbuntu-4.jpg' # set wallpaper
-gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/MacBuntu-Wallpapers/mbuntu-1.jpg'
+gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/MacBuntu-Wallpapers/mbuntu-1.jpg' # set wallpaper
+gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/MacBuntu-Wallpapers/mbuntu-1.jpg'# set lock screen wallpaper
 gsettings set org.gnome.desktop.interface font-name 'Lucida MAC 11'                 # set font
 gsettings set org.gnome.desktop.interface document-font-name 'MACGrande Medium 11'  # set font
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Lucida MAC Bold 11'   # set font
