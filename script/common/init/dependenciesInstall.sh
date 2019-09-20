@@ -21,5 +21,8 @@ sudo apt install gdebi-core -y
 INFO "Install python-pip"
 sudo apt install python-pip
 
+INFO "Install net-tools"
+sudo apt install net-tools
+
 INFO "Install common libs"
 sudo apt install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6 libxml2-utils -y
