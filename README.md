@@ -21,6 +21,7 @@ An auto-setup script for Ubuntu:
 - flatpak
 - vim config
 - tmux config
+- privoxy
 
 ## ERROR
 
